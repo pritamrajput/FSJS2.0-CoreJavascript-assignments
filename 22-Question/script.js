@@ -10,6 +10,7 @@
 
 const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
 let max = 0;
+let sum = 0;
 console.log(`The original array is`);
 console.log(ages);
 for(let i = 0; i<=ages.length-1; i++){
@@ -24,3 +25,28 @@ for(let i = 0; i<=ages.length-1; i++){
 console.log("The sorted array is")
 console.log(ages);
 console.log(`Min: ${ages[0]} and Max: ${ages[ages.length-1]}`)
+
+if(ages.length%2 === 0){
+    console.log(`The median are ${ages[(ages.length/2)-1]} and ${ages[ages.length/2]}`);
+}
+else{
+    console.log(`The median is ${ages[ages.length/2]}`); 
+}
+
+for(let i = 0;i<=ages.length-1;i++){
+    sum = sum + ages[i];
+}
+
+console.log(`The average is ${sum/ages.length}`);
+
+console.log(`The range of ages is ${ages[ages.length-1] - ages[0]}`);
+
+const calcDifference = (a,b) => {
+  return Math.abs(a-b);
+}
+
+const differenceOne = calcDifference(ages[0], sum/ages.length);
+const differenceTwo = calcDifference(ages[ages.length-1], sum/ages.length);
+
+console.log(`The first difference between Min and average is ${differenceOne}`)
+console.log(`The first difference between Max and average is ${differenceTwo}`)
